@@ -33,8 +33,8 @@
                 <li><a href="#">Contact</a></li>
             </ul>
             <ul class="nav-direita">
-                <li><a href="#">Signup</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="#" id="navSignup">Signup</a></li>
+                <li><a href="#" id="navLogin">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -191,6 +191,46 @@
       </footer>
 
     
+    <div class="auth-modal" id="authModal" aria-hidden="true">
+        <div class="auth-modal__overlay" data-modal-close></div>
+        <div class="auth-modal__dialog" role="dialog" aria-labelledby="authModalTitle" aria-modal="true">
+            <button class="auth-modal__close" type="button" aria-label="Fechar modal" data-modal-close>&times;</button>
+            <div class="auth-modal__header">
+                <button class="auth-modal__tab is-active" type="button" data-view-toggle="signup">
+                    Criar conta
+                </button>
+                <button class="auth-modal__tab" type="button" data-view-toggle="login">
+                    Entrar
+                </button>
+            </div>
+            <div class="auth-modal__body">
+                <form id="registerForm" class="auth-form is-active" data-view="signup">
+                    <h2 id="authModalTitle">Criar conta</h2>
+                    <input class="auth-form__input" type="text" id="name" placeholder="Nome" required>
+                    <input class="auth-form__input" type="email" id="email" placeholder="Email" required>
+                    <input class="auth-form__input" type="password" id="senha" placeholder="Senha" required>
+                    <button class="auth-form__submit" type="submit">Cadastrar</button>
+                </form>
+
+                <form class="auth-form" data-view="login" novalidate>
+                    <h2>Entrar</h2>
+                    <label class="auth-form__label">
+                        Digite seu nome
+                        <input class="auth-form__input" type="email" name="login-email" placeholder="abc123@gmail.com" required>
+                    </label>
+                    <label class="auth-form__label">
+                        Digite sua senha
+                        <input class="auth-form__input" type="password" name="login-password" placeholder="Senha" required>
+                    </label>
+                    <button class="auth-form__submit" type="submit">Entrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+      <script src="pop-up_login.js"></script>
+      <script src="api-cadastro.js"></script>
+      <script src="api-login.js"></script>
 </body>
 
 </html>
